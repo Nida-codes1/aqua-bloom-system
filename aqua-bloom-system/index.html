@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#123d32" />
+  <title>Aqua Bloom | Smart Tomato Farming</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#">
+        <span class="brand-mark">✿</span>
+        <span><strong>Aqua Bloom</strong><small>SMART AGRICULTURE</small></span>
+      </a>
+      <div class="farm-card">
+        <div class="farm-icon">🌱</div>
+        <div><small>ACTIVE FARM</small><strong>Tomato Field 01</strong><span><i class="live-dot"></i> System online</span></div>
+      </div>
+      <nav class="nav">
+        <p class="nav-label">WORKSPACE</p>
+        <a class="nav-link active" href="#overview"><span>▦</span> Overview</a>
+        <a class="nav-link" href="#sensors"><span>⌁</span> Sensor readings</a>
+        <a class="nav-link" href="#irrigation"><span>◉</span> Irrigation control</a>
+        <a class="nav-link" href="#alerts"><span>♧</span> Alerts & insights</a>
+        <p class="nav-label second">SYSTEM</p>
+        <a class="nav-link" href="#how-it-works"><span>ⓘ</span> How it works</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-box"><span>🌤️</span><strong>Grow smarter.</strong><p>Use real-time field conditions to make better irrigation decisions.</p></div>
+        <div class="profile"><div class="avatar">AB</div><div><strong>Aqua Bloom</strong><small>Farm dashboard</small></div><span class="more">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="overview">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuBtn" aria-label="Open menu">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <strong>Overview</strong></div>
+        <div class="top-actions">
+          <span class="demo-pill"><i class="live-dot"></i> DEMO DATA</span>
+          <button class="language-btn" id="languageBtn">ಕನ್ನಡ / EN</button>
+          <div class="date-chip" id="todayDate">Today</div>
+        </div>
+      </header>
+
+      <section class="welcome-row">
+        <div>
+          <p class="eyebrow">MONDAY, FIELD REPORT</p>
+          <h1>Good morning, <em>Farmer!</em> <span>☀️</span></h1>
+          <p class="subheading">Here's what's happening with your tomato field today.</p>
+        </div>
+        <button class="outline-btn" id="refreshBtn">↻ <span data-en="Refresh readings" data-kn="ಮತ್ತೆ ಓದಿ">Refresh readings</span></button>
+      </section>
+
+      <section class="hero-banner">
+        <div class="hero-copy">
+          <span class="hero-tag">🌿 YOUR FARM AT A GLANCE</span>
+          <h2>Every drop counts.<br><em>Every bloom matters.</em></h2>
+          <p>Monitor your field, understand its needs and make smarter watering decisions.</p>
+          <a href="#sensors" class="hero-link">Explore field readings <span>→</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div><div class="hill hill-back"></div><div class="hill hill-front"></div>
+          <div class="plant plant-one"><i></i><b></b><span></span></div>
+          <div class="plant plant-two"><i></i><b></b><span></span></div>
+          <div class="tomato tomato-one"></div><div class="tomato tomato-two"></div>
+          <div class="water-drop">滴</div>
+        </div>
+      </section>
+
+      <section class="section-heading" id="sensors">
+        <div><p class="eyebrow">LIVE FIELD CONDITIONS</p><h2>Sensor overview</h2></div>
+        <span class="updated" id="lastUpdated">Updated just now</span>
+      </section>
+
+      <section class="sensor-grid">
+        <article class="sensor-card soil-card">
+          <div class="card-top"><span class="sensor-icon soil-icon">◒</span><span class="status status-good" id="soilStatus">GOOD</span></div>
+          <p class="metric-label">Soil moisture</p>
+          <div class="metric-line"><strong id="soilValue">68</strong><span>%</span></div>
+          <div class="meter"><span id="soilMeter" style="width:68%"></span></div>
+          <p class="card-foot">Ideal range: 40–70%</p>
+        </article>
+        <article class="sensor-card">
+          <div class="card-top"><span class="sensor-icon temp-icon">♨</span><span class="status status-good" id="tempStatus">NORMAL</span></div>
+          <p class="metric-label">Temperature</p>
+          <div class="metric-line"><strong id="tempValue">29</strong><span>°C</span></div>
+          <div class="mini-track"><span style="width:58%"></span></div>
+          <p class="card-foot">High temperature alert above 35°C</p>
+        </article>
+        <article class="sensor-card">
+          <div class="card-top"><span class="sensor-icon humidity-icon">♧</span><span class="status status-good">NORMAL</span></div>
+          <p class="metric-label">Humidity</p>
+          <div class="metric-line"><strong id="humidityValue">64</strong><span>%</span></div>
+          <div class="mini-track"><span style="width:64%"></span></div>
+          <p class="card-foot">Air humidity around the crop</p>
+        </article>
+        <article class="sensor-card">
+          <div class="card-top"><span class="sensor-icon water-icon">♢</span><span class="status status-good" id="tankStatus">AVAILABLE</span></div>
+          <p class="metric-label">Water tank level</p>
+          <div class="metric-line"><strong id="tankValue">82</strong><span>%</span></div>
+          <div class="meter water-meter"><span id="tankMeter" style="width:82%"></span></div>
+          <p class="card-foot">Water available for irrigation</p>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel irrigation-panel" id="irrigation">
+          <div class="panel-heading"><div><p class="eyebrow">WATER MANAGEMENT</p><h2>Irrigation control</h2></div><span class="status status-good" id="pumpStatus">PUMP OFF</span></div>
+          <div class="irrigation-body">
+            <div class="pump-visual"><div class="pump-ring"><span>💧</span></div><small>WATER PUMP</small></div>
+            <div class="irrigation-info">
+              <h3 id="irrigationTitle">Your soil is looking healthy.</h3>
+              <p id="irrigationText">Moisture is within the preferred range. Irrigation is not required right now.</p>
+              <div class="control-row"><span>Automatic irrigation</span><label class="switch"><input type="checkbox" id="autoToggle" checked><span class="slider"></span></label></div>
+              <button class="primary-btn" id="pumpBtn">Turn pump ON</button>
+              <small class="control-note">Demo control only · No physical pump is connected</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel crop-panel">
+          <div class="panel-heading"><div><p class="eyebrow">CROP WELLNESS</p><h2>Tomato field status</h2></div><span class="leaf-badge">✿ Growing</span></div>
+          <div class="crop-illustration"><div class="crop-sun"></div><div class="crop-row"><span>🌱</span><span>🍅</span><span>🌱</span><span>🍅</span><span>🌱</span></div></div>
+          <div class="crop-details"><div><small>Crop</small><strong>Tomato</strong></div><div><small>Field ID</small><strong>TB-001</strong></div><div><small>Condition</small><strong class="healthy-text">Healthy</strong></div></div>
+          <p class="crop-note">Keep monitoring moisture and temperature to support healthy crop growth.</p>
+        </article>
+      </section>
+
+      <section class="content-grid lower-grid">
+        <article class="panel alerts-panel" id="alerts">
+          <div class="panel-heading"><div><p class="eyebrow">ATTENTION & INSIGHTS</p><h2>Field alerts</h2></div><span class="alert-count" id="alertCount">1 update</span></div>
+          <div id="alertList" class="alert-list">
+            <div class="alert-item"><span class="alert-symbol green">✓</span><div><strong>Conditions look stable</strong><p>Current soil moisture is within the preferred range.</p><small>Just now</small></div></div>
+          </div>
+        </article>
+        <article class="panel how-panel" id="how-it-works">
+          <div class="panel-heading"><div><p class="eyebrow">THE AQUA BLOOM WAY</p><h2>How it works</h2></div><span class="sparkle">✦</span></div>
+          <div class="steps">
+            <div class="step"><span>01</span><div><strong>Sense</strong><p>Collect soil and weather readings from field sensors.</p></div></div>
+            <div class="step"><span>02</span><div><strong>Understand</strong><p>Compare readings with crop-friendly thresholds.</p></div></div>
+            <div class="step"><span>03</span><div><strong>Act</strong><p>Get irrigation guidance and control the pump.</p></div></div>
+          </div>
+        </article>
+      </section>
+
+      <footer><span>✿ <strong>Aqua Bloom System</strong></span><span>Smart irrigation for healthier harvests.</span><span>Built for a greener tomorrow 🌱</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>

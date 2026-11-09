@@ -1,0 +1,9 @@
+# Local/editor files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Never commit secrets
+.env
+.env.*
+!.env.example
