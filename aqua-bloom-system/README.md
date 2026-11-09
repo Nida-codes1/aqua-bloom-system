@@ -5,7 +5,7 @@ A responsive smart-irrigation and tomato-farming dashboard prototype.
 ## About
 Aqua Bloom is a student engineering project concept that helps monitor tomato-field conditions and support irrigation decisions using sensor readings.
 
-🔗 **Live Website:** https://nida-codes1.github.io/aqua-bloom-system/
+
 ## Dashboard features
 - Soil moisture, temperature, humidity and water-tank indicators
 - Irrigation status and demo pump control
